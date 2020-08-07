@@ -46,7 +46,21 @@ def neighborhood():
 def testing():
     return make_json('tests.csv', 'DATE')
 
+@app.route('/borough_age')
+def borough_age():
+    return make_json('boroughs-by-age.csv', 'group')
 
+@app.route('/borough_race')
+def borough_race():
+    return make_json('boroughs-by-race.csv', 'group')
+
+@app.route('/borough_sex')
+def borough_sex():
+    return make_json('boroughs-by-sex.csv', 'group')
+
+@app.route('/borough_timelines')
+def borough_timelines():
+    return make_json('boroughs-case-hosp-death.csv', 'DATE_OF_INTEREST')
 
 app.run(port=3001)
 
