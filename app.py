@@ -2,8 +2,12 @@ from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 import csv 
 
+# this function converts the csv data into json data to send to the front end
+# using the csv module to convert to a dictionary
 def make_json(path, index_name): 
     results = {} 
+    #encoded with utf-8 as it supports many languages/mixtures of languages
+    # and creates uniform encoding for all pages 
     with open('./csv_data/' + path, encoding='utf-8') as data: 
         info = csv.DictReader(data) 
         for rows in info: 
@@ -12,8 +16,12 @@ def make_json(path, index_name):
     return results
 
 app = Flask(__name__)
+
+#setting up support for the resources to be accessed from an outside domain
 CORS(app, support_credentials=True)
 
+# here are the various routes served up with the appropriate csv data
+# each index is specified for easier access to the right information
 @app.route('/age_groups')
 def ages():
     return make_json('by-age.csv', 'AGE_GROUP')
@@ -65,10 +73,4 @@ def borough_timelines():
 app.run(port=3001)
 
 
-# get info for a specific date by typing it in
-
-
-# NYC_CASE_COUNT	222522
-# NYC_HOSPITALIZED_COUNT	56365
-# NYC_CONFIRMED_DEATH_COUNT	18927
 
