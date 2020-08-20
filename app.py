@@ -66,9 +66,6 @@ def borough_race():
 def borough_sex():
     return make_json('boroughs-by-sex.csv', 'group')
 
-@app.route('/borough_timelines')
-def borough_timelines():
-    return make_json('boroughs-case-hosp-death.csv', 'DATE_OF_INTEREST')
 
 app.run(port=3001)
 
