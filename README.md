@@ -13,6 +13,7 @@ New York City [Health Department](https://github.com/nychealth/coronavirus-data)
 * [Pip 3](https://pip.pypa.io/en/stable/installing/)
 
 ## Instructions
+After cloning down the repo:
 * run pip3 install flask
 * run pip3 install flask_cors
 * run python3 app.py
