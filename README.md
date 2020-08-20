@@ -7,6 +7,7 @@ New York City [Health Department](https://github.com/nychealth/coronavirus-data)
 ## Technologies Used
 * Flask
 * Python's unittest, csv, jsonify, and flask_cors modules
+* The frontend resources exist in a [ReactJS](https://reactjs.org/) application which can be accessed [here](https://github.com/JazzyMussels/CovidDataVisualizationsFE)
 
 ## Requirements
 * [Python 3](https://www.python.org/downloads/)
